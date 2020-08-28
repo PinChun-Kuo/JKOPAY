@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const tem = <div>Hello World</div>
+import App from './components';
+import './assets/stylesheets/index.scss';
 
 ReactDOM.render(
-  tem,
+  <App />,
   document.getElementById('root')
 );
