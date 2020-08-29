@@ -1,0 +1,101 @@
+.choose-shop {
+  height: 100%;
+  background-color: #eeeeee;
+
+  &__form {
+    width: 600px;
+    padding: 16px;
+    margin: auto;
+
+    .form-body {
+      padding: 16px;
+      border-radius: 4px;
+      background-color: #ffffff;
+
+      &__title {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+
+        .form-label {
+          margin-bottom: 8px;
+
+          .form-help {
+            margin-left: 8px;
+            font-size: 14px;
+            color: #959595;
+          }
+        }
+
+        .form-field {
+          padding: 12px;
+          border: none;
+          border-radius: 4px;
+          margin-bottom: 24px;
+          font-size: 20px;
+          background-color: #eeeeee;
+        }
+
+        .color-btn {
+          width: 50px;
+          height: 50px;
+          padding: 0;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+
+          &:not(:last-child) {
+            margin-right: 12px;
+          }
+
+          &.orange {
+            background-color: #EE7700;
+          }
+
+          &.yellow {
+            background-color: #FFAA33;
+          }
+
+          &.blue {
+            background-color: #5599FF;
+          }
+
+          &.green {
+            background-color: #00AAAA;
+          }
+
+          &.purple {
+            background-color: #9999FF;
+          }
+
+          &.selected {
+            .tick-icon {
+              display: inline-block;
+            }
+          }
+
+          .tick-icon {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .form-footer {
+      padding: 30px 16px;
+      border-radius: 4px;
+      margin-top: 10px;
+      background-color: #ffffff;
+      text-align: center;
+
+      .submit-btn {
+        width: 450px;
+      }
+    }
+  }
+}
