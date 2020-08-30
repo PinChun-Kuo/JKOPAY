@@ -6,7 +6,7 @@ import { withFormik, Field } from 'formik';
 import { fakeShops } from './../../data/shops';
 import { fakeColors } from './../../data/colors';
 
-const userNameRule = /^.[\u4e00-\u9fa5_a-zA-Z0-9_]{0,25}$/;
+const userNameRule = /^.[\u4e00-\u9fa5_a-zA-Z0-9]{0,25}$/;
 
 const ChooseShop = ({ values, handleSubmit }) => {
   const [selectedColor, setSelectedColor] = useState(values.color);
