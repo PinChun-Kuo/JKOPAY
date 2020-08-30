@@ -6,10 +6,11 @@ import { withFormik, Field } from 'formik';
 import { fakeShops } from './../../data/shops';
 import { fakeColors } from './../../data/colors';
 
-const userNameRule = /^.[\u4e00-\u9fa5_a-zA-Z0-9_]{1,25}$/;
+const userNameRule = /^.[\u4e00-\u9fa5_a-zA-Z0-9_]{0,25}$/;
 
 const ChooseShop = ({ values, handleSubmit }) => {
   const [selectedColor, setSelectedColor] = useState(values.color);
+  const disabled = (values.shopId == 0) || !values.userName.match(userNameRule) || !selectedColor;
 
   useEffect(() => {
     values.color = selectedColor;
@@ -48,7 +49,9 @@ const ChooseShop = ({ values, handleSubmit }) => {
                     className={classNames('color-btn', color, { 'selected': selectedColor === color })}
                     type='button'
                     value={color}
-                    onClick={e => { setSelectedColor(e.target.value) }}
+                    onClick={(selectedColor === color) ? null : (e => {
+                      setSelectedColor(e.target.value)
+                    })}
                   >
                     <i className='tick-icon'></i>
                   </button>
@@ -58,7 +61,13 @@ const ChooseShop = ({ values, handleSubmit }) => {
           </div>
         </div>
         <div className='form-footer'>
-          <button className='submit-btn btn btn-primary' type='submit'>下一步，預覽</button>
+          <button
+            className={classNames('submit-btn btn btn-primary', {'disabled': disabled})}
+            type='submit'
+            disabled={disabled}
+          >
+            下一步，預覽
+          </button>
         </div>
       </form>
     </div>
