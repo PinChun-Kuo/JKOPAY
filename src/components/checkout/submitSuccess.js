@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SubmitSuccess = ({ goToChooseShop }) => {
-  setTimeout(goToChooseShop, 3000);
+const SubmitSuccess = ({ handleResetForm, goToChooseShop }) => {
+  setTimeout(() => {
+    handleResetForm();
+    goToChooseShop();
+  }, 3000);
 
   return (
     <div className='submit-success-wrapper'>
@@ -14,6 +17,7 @@ const SubmitSuccess = ({ goToChooseShop }) => {
 }
 
 SubmitSuccess.propTypes = {
+  handleResetForm: PropTypes.func.isRequired,
   goToChooseShop: PropTypes.func.isRequired
 }
 
