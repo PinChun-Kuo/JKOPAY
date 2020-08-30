@@ -5,8 +5,9 @@ import { initialState, reducer } from './../../reducers/form';
 import { submitForm } from './../../actions';
 import { CHOOSE_SHOP, PREVIEW, SUBMIT_SUCCESS } from './../../constants/steps';
 import ChooseShop from './chooseShop';
+import Preview from './preview';
 
-const Checkout = ({ step, goToPreview }) => {
+const Checkout = ({ step, goToChooseShop, goToPreview, goToSubmitSuccess }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { shopId, userName, color } = state;
 
@@ -14,9 +15,9 @@ const Checkout = ({ step, goToPreview }) => {
 
   switch (step) {
     case PREVIEW:
-      return null;
+      return <Preview shopId={shopId} userName={userName} goToChooseShop={goToChooseShop} goToSubmitSuccess={goToSubmitSuccess} />;
     case SUBMIT_SUCCESS:
-    return null;
+      return null;
     case CHOOSE_SHOP:
     default:
       return <ChooseShop shopId={shopId} userName={userName} color={color} handleSubmitForm={handleSubmitForm} goToPreview={goToPreview} />;
@@ -25,7 +26,9 @@ const Checkout = ({ step, goToPreview }) => {
 
 Checkout.propTypes = {
   step: PropTypes.oneOf([CHOOSE_SHOP, PREVIEW, SUBMIT_SUCCESS]),
-  goToPreview: PropTypes.func.isRequired
+  goToChooseShop: PropTypes.func.isRequired,
+  goToPreview: PropTypes.func.isRequired,
+  goToSubmitSuccess: PropTypes.func.isRequired
 }
 
 export default Checkout;

@@ -1,0 +1,61 @@
+.preview-wrapper {
+  height: 100%;
+  background-color: #eeeeee;
+
+  .preview-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .preview-content {
+    width: 600px;
+    padding: 16px;
+    margin: auto;
+
+    .preview-block {
+      padding: 16px;
+      border-radius: 4px;
+      background-color: #ffffff;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &__title {
+        padding: 0 0 12px 0;
+        border-bottom: 1px solid #eeeeee;
+        font-weight: bold;
+      }
+
+      .red {
+        color: #cc0000;
+      }
+    }
+
+    .reminder-block {
+      .preview-block__title {
+        border: none;
+      }
+
+      .reminders {
+        padding-inline-start: 24px;
+        margin: 0 0 32px 0;
+        color: #888888;
+      }
+
+      .buttons {
+        text-align: center;
+
+        .edit-btn {
+          margin-right: 16px;
+        }
+
+        .edit-btn, .submit-btn {
+          width: 275px;
+        }
+      }
+    }
+  }
+}
