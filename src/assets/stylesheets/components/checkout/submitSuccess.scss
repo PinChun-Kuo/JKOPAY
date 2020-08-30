@@ -1,0 +1,16 @@
+.submit-success-wrapper {
+  height: 100%;
+  background-color: #eeeeee;
+
+  .submit-success-content {
+    padding: 16px;
+    margin: auto;
+
+    .submit-success-msg {
+      padding: 16px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+}
